@@ -1,0 +1,23 @@
+{
+  "name": "newPiVo",
+  "description": "Nuevo PiVo (nodeJs + Polymer))",
+  "main": "index.html",
+  "authors": [
+    "Salva Moya"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.10",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "neon-animation": "PolymerElements/neon-animation#^1.2.2"
+  }
+}
