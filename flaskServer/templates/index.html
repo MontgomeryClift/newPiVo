@@ -53,9 +53,6 @@
     bottom: 25px;
     right: 25px;
   }
-  paper-listbox  {
-    background-color: var(--paper-deep-orange-50);
-  }
   paper-menu  {
     background-color: var(--paper-deep-orange-50);
   }
@@ -82,7 +79,16 @@
       overflow-x: hidden;
       display: block;
     }
-
+    paper-dialog.size-position2 {
+        position: fixed;
+        bottom: 175px;
+        right: 50px;
+        width: 300px;
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        display: block;
+      }
     .avatar {
       position: fixed;
       top: 60px;
@@ -92,6 +98,25 @@
       border-radius: 20px;
       box-sizing: border-box;
       background-color: #DDD;
+    }
+    .contact_avatar {
+      border-radius: 20px;
+      position: relative;
+      height: 40px;
+      width: 40px;
+      box-sizing: border-box;
+      background-color: #DDD;
+    }
+    .add_contact {
+      position: absolute;
+      /*top: 40px;
+      right: -150px;*/
+      right: 20px;
+      --paper-fab-background: var(--paper-deep-orange-500);
+    }
+    .contact_list {
+      overflow: auto;
+      height: 300px;
     }
 
 </style>
@@ -118,7 +143,7 @@
         <section>
           <paper-toolbar>
             <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
-            <span class="title">Title</span>
+            <span class="title"></span>
             <paper-icon-button icon="search"></paper-icon-button>
             <paper-icon-button icon="refresh"></paper-icon-button>
           </paper-toolbar>
@@ -127,6 +152,58 @@
           <paper-fab icon="communication:call" title="phone" class="orange" data-dialog="position"></paper-fab>
           <paper-dialog id="position" class="size-position">
                 <gold-phone-input></gold-phone-input>
+          </paper-dialog>
+          <paper-dialog id="position2" class="size-position2">
+            <paper-item>
+              Contactos
+              <paper-fab mini icon="add" class="add_contact"></paper-fab>
+            </paper-item>
+            <div class="contact_list">
+              <paper-listbox selected="0">
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+                <paper-item>
+                  <iron-image class="contact_avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+                </paper-item>
+              </paper-listbox>
+            </div>
           </paper-dialog>
         </section>
     </paper-drawer-panel>
@@ -143,6 +220,10 @@
       var dialog = document.getElementById(id);
       if (dialog) {
         dialog.open();
+      }
+      var dialog2 = document.getElementById(id + '2');
+      if (dialog2) {
+        dialog2.open();
       }
     }
   </script>
