@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>nPiVo2.Alpha</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <!-- Paper-Elements -->
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+    <link rel="import" href="bower_components/paper-material/paper-material.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <!-- Iron-Elements -->
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  </head>
+  <style>
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  </style>
+  <style is="custom-style">
+  paper-toolbar {
+    background-color: var(--paper-deep-orange-500);
+    color: var(--paper-white);
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-size: 36px;
+  }
+</style>
+  <body class="fullbled layout vertical">
+    <paper-material elevation="1">
+      <paper-drawer-panel>
+        <div drawer>
+          <paper-toolbar class="tall">Operador
+          </paper-toolbar>
+        </div>
+        <div main>
+          <paper-toolbar class="medium-tall">
+            <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+            <span class="title">Title</span>
+            <paper-icon-button icon="refresh"></paper-icon-button>
+            <paper-icon-button icon="search"></paper-icon-button>
+          </paper-toolbar>
+        </div>
+      </paper-drawer-panel>
+    </paper-material>
+  </body>
+</html>

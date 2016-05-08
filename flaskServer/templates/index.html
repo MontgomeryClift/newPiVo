@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>nPiVo2.Alpha</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <!-- Paper-Elements -->
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-menu/paper-submenu.html">
+    <link rel="import" href="bower_components/paper-material/paper-material.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <!-- Iron-Elements -->
+    <link rel="import" href="bower_components/iron-image/iron-image.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+    <link rel="import" href="bower_components/iron-icons/social-icons.html">
+    <link rel="import" href="bower_components/iron-icons/image-icons.html">
+    <link rel="import" href="bower_components/iron-icons/av-icons.html">
+    <!-- Gold-Elements -->
+    <link rel="import" href="bower_components/gold-phone-input/gold-phone-input.html">
+    <!-- Font-Roboto -->
+    <link rel="import" href="/bower_components/font-roboto/roboto.html">
+  </head>
+  <style is="custom-style">
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: roboto;
+  }
+  paper-toolbar {
+    background-color: var(--paper-deep-orange-500);
+    color: var(--paper-white);
+  }
+  paper-fab.orange {
+    --paper-fab-background: var(--paper-deep-orange-500);
+    --paper-fab-keyboard-focus-background: var(--paper-orange-900);
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+  }
+  paper-listbox  {
+    background-color: var(--paper-deep-orange-50);
+  }
+  paper-menu  {
+    background-color: var(--paper-deep-orange-50);
+  }
+  paper-card.userhud {
+    height: auto;
+    width: auto;
+  }
+  .user-menu-button1 {
+    margin-left: 20%;
+  }
+  .user-menu-button2 {
+    margin-left: 10%;
+  }
+  .left-drawer {
+    background-color: var(--paper-deep-orange-100);
+  }
+  paper-dialog.size-position {
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      width: 300px;
+      height: auto;
+      overflow: auto;
+      overflow-x: hidden;
+      display: block;
+    }
+
+    .avatar {
+      position: fixed;
+      top: 60px;
+      left: 200px;
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      background-color: #DDD;
+    }
+
+</style>
+  <body class="fullbled layout vertical">
+    <paper-drawer-panel>
+      <div drawer class="left-drawer">
+        <paper-card class="userhud" heading="usuario" image="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150">
+          <iron-image class="avatar" sizing="contain" src="https://s3.amazonaws.com/uifaces/faces/twitter/enda/73.jpg"></iron-image>
+          <div class="card-content">
+            correo@email.com
+          </div>
+          <div class="card-content">
+            <paper-icon-button icon="av:play-arrow" title="en linea" class="user-menu-button1"></paper-icon-button>
+            <paper-icon-button icon="av:pause" title="pausar" class="user-menu-button1"></paper-icon-button>
+          </div>
+          <div class="card-actions">
+            <paper-icon-button icon="settings" title="ajustes" class="user-menu-button2"></paper-icon-button>
+            <paper-icon-button icon="question-answer" title="tickets" class="user-menu-button2"></paper-icon-button>
+            <paper-icon-button icon="power-settings-new" title="salir" class="user-menu-button2"></paper-icon-button>
+          </div>
+        </paper-card>
+      </div>
+      <div main>
+        <section>
+          <paper-toolbar>
+            <paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+            <span class="title">Title</span>
+            <paper-icon-button icon="search"></paper-icon-button>
+            <paper-icon-button icon="refresh"></paper-icon-button>
+          </paper-toolbar>
+        </section>
+        <section onclick="clickHandler(event)">
+          <paper-fab icon="communication:call" title="phone" class="orange" data-dialog="position"></paper-fab>
+          <paper-dialog id="position" class="size-position">
+                <gold-phone-input></gold-phone-input>
+          </paper-dialog>
+        </section>
+    </paper-drawer-panel>
+  <script>
+    function clickHandler(e) {
+      var button = e.target;
+      while (!button.hasAttribute('data-dialog') && button !== document.body) {
+        button = button.parentElement;
+      }
+      if (!button.hasAttribute('data-dialog')) {
+        return;
+      }
+      var id = button.getAttribute('data-dialog');
+      var dialog = document.getElementById(id);
+      if (dialog) {
+        dialog.open();
+      }
+    }
+  </script>
+  </body>
+</html>
